@@ -1,71 +1,112 @@
-import Logo from '../../assets/webpay_logo_dark.svg';
+import Logo from '../../assets/webpay_logo_white.svg';
+import SolanaLogo from '../../assets/solana-sol-logo.svg';
+
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 export const Header = () => {
-    return ( <header className="relative">
-    <div className="bg-gray-900 pt-6">
-      <nav className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
-        <div className="flex items-center flex-1">
-          <div className="flex items-center justify-between w-full md:w-auto">
+  return (
+    <Popover className="relative bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/">
               <span className="sr-only">Webpay</span>
-              <img className="h-8 w-auto sm:h-10" src={Logo} alt=""/>
+              <img className="h-8 w-auto sm:h-10" src={Logo} alt="" />
             </a>
-            <div className="-mr-2 flex items-center md:hidden">
-              <button type="button" className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white" aria-expanded="false">
-                <span className="sr-only">Open main menu</span>
-                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
+          </div>
+
+          <nav className="hidden md:flex space-x-10">
+            <a
+              href="docs.webpay.so"
+              className="text-base font-medium text-white hover:text-purple"
+            >
+              Docs
+            </a>
+            <a
+              href=""
+              className="text-base font-medium text-white hover:text-purple"
+            >
+              Twitter
+            </a>
+            <a
+              href="https://discord.gg/5Jftfevd"
+              className="text-base font-medium text-white hover:text-purple"
+            >
+              Discord
+            </a>
+          </nav>
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <div className="space-x-2 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-md shadow-sm text-base font-medium text-white bg-purple">
+              <img className="h-4 w-auto" src={SolanaLogo} alt="" />
+
+              <a href="https://app.webpay.so" className="">
+                Launch App
+              </a>
             </div>
           </div>
-          <div className="hidden space-x-8 md:flex md:ml-10">
-            <a href="#" className="text-base font-medium text-white hover:text-gray-300">Discord</a>
-
-            <a href="#" className="text-base font-medium text-white hover:text-gray-300">Twitter</a>
-
-            
+          <div className="-mr-2 -my-2 md:hidden">
+            <Popover.Button className="bg-black rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
           </div>
-        </div>
-        <div className="hidden md:flex md:items-center md:space-x-6">
-      
-          <a href="#" className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-            Launch App
-          </a>
-        </div>
-      </nav>
-    </div>
-
-    <div className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
-      <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-        <div className="px-5 pt-4 flex items-center justify-between">
-          <div>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
-          </div>
-          <div className="-mr-2">
-            <button type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
-              <span className="sr-only">Close menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className="pt-5 pb-6">
-          <div className="px-2 space-y-1">
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Discord</a>
-
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Twitter</a>
-
-        
-          </div>
-          <div className="mt-6 px-5">
-            <a href="#" className="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Launch App</a>
-          </div>
-  
         </div>
       </div>
-    </div>
-  </header>
-)
-}
+
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute top-0 inset-x-0  transition transform origin-top-right md:hidden z-10"
+        >
+          <div className="shadow-lg ring-1 ring-black ring-opacity-5 bg-black divide-y-2 divide-gray-50">
+            <div className="pt-5 pb-6 px-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <img className="h-8 w-auto sm:h-10" src={Logo} alt="" />
+                </div>
+                <div className="-mr-2">
+                  <Popover.Button className="bg-black rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Close menu</span>
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
+                </div>
+              </div>
+              <div className="mt-6">
+                <nav className="grid gap-y-8">
+                  <a
+                    href="https://docs.webpay.so"
+                    className="text-base font-medium text-white hover:text-purple"
+                  >
+                    Docs
+                  </a>
+                  <a
+                    href=""
+                    className="text-base font-medium text-white hover:text-purple"
+                  >
+                    Twitter
+                  </a>
+                  <a
+                    href="https://discord.gg/5Jftfevd"
+                    className="text-base font-medium text-white hover:text-purple"
+                  >
+                    Discord
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
+  );
+};

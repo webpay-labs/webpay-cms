@@ -6,10 +6,21 @@ module.exports = {
       sans: ['CircularStd', 'sans-serif'],
       serif: ['serif'],
     },
+    colors: {
+      black: '#000',
+      'light-black': '#172430',
+      white: '#FFF',
+      purple: {
+        DEFAULT: '#8B4BFF',
+      },
+      pink: {
+        DEFAULT: '#DC1FFF',
+      },
+    },
     extend: {},
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
