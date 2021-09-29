@@ -19,12 +19,16 @@ export const Hero = () => {
             </p>
 
             <div className="flex items-center justify-center space-x-2 mt-8">
-              <img className="lg:h-8 w-auto sm:h-4" src={SolanaLogo} />
+              <img
+                className="lg:h-8 w-auto sm:h-4"
+                src={SolanaLogo}
+                alt="Solana logo"
+              />
               <p className="text-base text-white">Supports SPL Tokens</p>
             </div>
           </div>
 
-          <img className="mt-10" src={DashboardImg} />
+          <img className="mt-10" src={DashboardImg} alt="Webpay dashboard" />
         </main>
       </div>
     </div>

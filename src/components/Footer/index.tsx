@@ -33,7 +33,7 @@ export const Footer = () => {
                 <h3 className="text-base font-semibold text-white tracking-wider ">
                   Resources
                 </h3>
-                <ul role="list" className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <a
@@ -52,7 +52,7 @@ export const Footer = () => {
                 <h3 className="text-base font-semibold text-white tracking-wider">
                   Merchants
                 </h3>
-                <ul role="list" className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <a
@@ -69,7 +69,7 @@ export const Footer = () => {
                 <h3 className="text-base font-semibold text-white tracking-wider">
                   Connect
                 </h3>
-                <ul role="list" className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a

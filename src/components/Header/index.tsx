@@ -25,7 +25,7 @@ export const Header = () => {
               Docs
             </a>
             <a
-              href=""
+              href="https://twitter.com"
               className="text-base font-medium text-white hover:text-purple"
             >
               Twitter
@@ -90,7 +90,7 @@ export const Header = () => {
                     Docs
                   </a>
                   <a
-                    href=""
+                    href="https://twitter.com"
                     className="text-base font-medium text-white hover:text-purple"
                   >
                     Twitter
